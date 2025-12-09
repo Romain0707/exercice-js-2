@@ -4,6 +4,10 @@
     --color-black : #000000;
 }
 
+* {
+    box-sizing: content-box;
+}
+
 body {
     background-color: var(--color-white);
 }
@@ -51,11 +55,26 @@ button {
     transform: translateX(300%);
 }
 
-.space {
-    width: 100vw;
-    height: 100vh;
+.space-link {
     color: var(--color-white);
-    background: center/cover no-repeat url(../img/space.jpg);
+}
+
+.space {
+    width: 90vw;
+    height: calc(97vh + 3px);
+    background: repeat-y url(../img/space.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    animation: slide 60s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-position-y: 0 ;
+  }
+  100% {
+    background-position-y: 6000px; 
+  }
 }
 
 .x-wing {
@@ -63,8 +82,8 @@ button {
     width: 50px;
     background: center/cover no-repeat url(../img/x-wing.png);
     position: absolute;
-    top: 150px;
-    left: 150px;
+    top: 350px;
+    left: 350px;
 }
 
 

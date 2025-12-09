@@ -1,23 +1,32 @@
 const xWing = document.querySelector('.x-wing');
 
-let numberX = 150;
-let numberY = 150;
+let numberX = xWing.getBoundingClientRect().x;
+let numberY = xWing.getBoundingClientRect().y;
 
-window.addEventListener('keydown', (e) => {
-    if(e.key === "z") {
+window.addEventListener('keypress', (e) => {
+    if(e.key === "z" && numberX > 20) {
         xWing.style.top = numberX + "px";
-        numberX += -10;
+        numberX += -10; 
     }
-    if(e.key === "s") {
+});
+
+window.addEventListener('keypress', (e) => {
+    if(e.key === "s" && numberX < window.innerHeight - 70) {
         xWing.style.top = numberX + "px";
         numberX += 10;
     }
-    if(e.key === "q") {
+})
+
+window.addEventListener('keypress', (e) => {
+    if(e.key === "q" && numberY > 20) {
         xWing.style.left = numberY + "px";
         numberY += -10;
     }
-    if(e.key === "d") {
+})
+
+window.addEventListener('keypress', (e) => {
+    if(e.key === "d" && numberY < window.innerWidth - 70) {
         xWing.style.left = numberY + "px";
         numberY += 10;
     }
-});
+})

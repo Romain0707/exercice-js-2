@@ -73,7 +73,7 @@ button {
     background-position-y: 0 ;
   }
   100% {
-    background-position-y: 6000px; 
+    background-position-y: 6000%; 
   }
 }
 
@@ -82,10 +82,19 @@ button {
     width: 50px;
     background: center/cover no-repeat url(../img/x-wing.png);
     position: absolute;
-    top: 350px;
-    left: 350px;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transition: 0.1s ease;
 }
 
+.xwing-right {
+    transform: rotateY(45deg);
+}
+
+.xwing-left {
+    transform: rotateY(-45deg);
+}
 
 table {
     border-collapse: collapse;
